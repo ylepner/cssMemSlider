@@ -1,2 +1,3 @@
 # cssMemSlider
- CSS Mem Slider
+
+https://ylepner.github.io/cssMemSlider/cssMemSlider/
