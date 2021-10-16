@@ -1,5 +1,5 @@
 .slider {
-  width: 300px;
+  width: 600px;
   overflow: hidden;
   display: grid;
   justify-items: center;
@@ -26,9 +26,30 @@
 }
 
 #radio-1 {
-  transform: translateX(-100%);
+  transform: translateX(1200%);
+}
+
+#radio-2 {
+  transform: translateX(1400%);
 }
 
 #radio-3 {
-  transform: translateX(100%);
+  transform: translateX(1600%);
+}
+
+#radio-4 {
+  transform: translateX(1800%);
+}
+
+input+.image+span,
+input+.image {
+  transform: translate(100%);
+  transition: all 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  opacity: 0;
+}
+
+input:checked+.image+span,
+input:checked+.image {
+  transform: translate(0) !important;
+  opacity: 1 !important;
 }
