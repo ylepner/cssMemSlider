@@ -1,5 +1,6 @@
 .slider {
-  width: 50vw;
+  width: 80vw;
+  max-width: 1200px;
   overflow: hidden;
   display: grid;
   justify-items: end;
@@ -7,19 +8,23 @@
                        "caption buttons";
   margin-left: auto;
   margin-right: auto;
+  row-gap: 1em;
 }
 
 .slider .image {
   grid-area: image;
-  height: 400px;
+  max-height: 400px;
+  height: 50vw;
   overflow: hidden;
   pointer-events: none;
+  width: 100%  ;
 }
 
 .image img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  border-radius: 1%;
 }
 
 .slider input {
@@ -58,11 +63,11 @@ label {
 
 label:hover .inner-label{
   border: 1px solid black;
-  background-color: grey;
+  background-color: rgb(197, 190, 228);
 }
 
 input:checked+* .inner-label {
-  background-color: black;
+  background-color: rgb(77, 20, 143);
 }
 
 
@@ -89,7 +94,8 @@ input {
 .radio_option+*+.image+span,
 .radio_option+*+.image {
   transform: translateX(100%);
-  transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition-property: transform, opacity;
   opacity: 0;
 }
 
@@ -103,15 +109,45 @@ input {
   cursor: pointer;
 }
 
-.radio_option.radio_option {
-  padding: 10px 10px;
-  width: 3vh;
-}
-
 
 .description {
   font-size: 1rem;
   font-family: Montserrat;
   color:rgb(56, 97, 104);
   font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .slider {
+    grid-template-areas: "image"
+                         "buttons"
+                         "caption";
+    justify-items: center;
+  }
+
+  #label-1 {
+    transform: translateX(-50%);
+  }
+  
+  #label-2 {
+    transform: translateX(0%);
+  }
+  
+  #label-3 {
+    transform: translateX(50%);
+  }
+  
+  #label-4 {
+    transform: translateX(100%);
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .description {
+    font-size: 0.8rem!important;
+  }
 }
