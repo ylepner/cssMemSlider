@@ -1,3 +1,12 @@
+html {
+  background-color: rgb(12 21 30);
+}
+
+body {
+  align-items: center;
+  margin-top: 10vh;
+}
+
 .slider {
   width: 80vw;
   max-width: 1200px;
@@ -58,16 +67,18 @@ label {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid rgb(176 178 188);
+  /* transition: 0.5s ease-in;
+  transition-property: background-color; */
 }
 
 label:hover .inner-label{
-  border: 1px solid black;
-  background-color: rgb(197, 190, 228);
+  border: 1px solid rgb(176 178 188);
+  background-color: rgb(91, 86, 110);
 }
 
 input:checked+* .inner-label {
-  background-color: rgb(77, 20, 143);
+  background-color: rgb(176 178 188);
 }
 
 
@@ -113,7 +124,7 @@ input {
 .description {
   font-size: 1rem;
   font-family: Montserrat;
-  color:rgb(56, 97, 104);
+  color: rgb(176 178 188);
   font-weight: bold;
 }
 
