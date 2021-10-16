@@ -1,0 +1,34 @@
+.slider {
+  width: 300px;
+  overflow: hidden;
+  display: grid;
+  justify-items: center;
+}
+
+.slider .image {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+
+.slider input {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+
+.slider span {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+
+.slider span {
+  width: 100%;
+  text-align: center;
+}
+
+#radio-1 {
+  transform: translateX(-100%);
+}
+
+#radio-3 {
+  transform: translateX(100%);
+}
