@@ -1,5 +1,5 @@
 .slider {
-  width: 700px;
+  width: 50vw;
   overflow: hidden;
   display: grid;
   justify-items: end;
@@ -26,7 +26,15 @@
  grid-area: buttons;
  align-self: end;
  z-index: 1;
+
 }
+
+.slider label {
+  grid-area: buttons;
+  align-self: end;
+  z-index: 1;
+  
+ }
 
 .slider span {
   grid-area: caption;
@@ -36,35 +44,74 @@
   width: 100%;
 }
 
-#radio-1 {
-  transform: translateX(-600%);
+label {
+  padding: 10px;
+  cursor: pointer;
 }
 
-#radio-2 {
-  transform: translateX(-400%);
+.inner-label {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid black;
 }
 
-#radio-3 {
+label:hover .inner-label{
+  border: 1px solid black;
+  background-color: grey;
+}
+
+input:checked+* .inner-label {
+  background-color: black;
+}
+
+
+#label-1 {
+  transform: translateX(-300%);
+}
+
+#label-2 {
   transform: translateX(-200%);
 }
 
-#radio-4 {
+#label-3 {
+  transform: translateX(-100%);
+}
+
+#label-4 {
   transform: translateX(0%);
 }
 
-input+.image+span,
-input+.image {
+input {
+  display: none;
+}
+
+.radio_option+*+.image+span,
+.radio_option+*+.image {
   transform: translateX(100%);
   transition: all 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
   opacity: 0;
 }
 
-input:checked+.image+span,
-input:checked+.image {
+.radio_option:checked+*+.image+span,
+.radio_option:checked+*+.image {
   transform: translate(0) !important;
   opacity: 1 !important;
 }
 
-input {
+.radio_option {
   cursor: pointer;
+}
+
+.radio_option.radio_option {
+  padding: 10px 10px;
+  width: 3vh;
+}
+
+
+.description {
+  font-size: 1rem;
+  font-family: Montserrat;
+  color:rgb(56, 97, 104);
+  font-weight: bold;
 }
