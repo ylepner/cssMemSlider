@@ -1,0 +1,164 @@
+html {
+  background-color: rgb(12 21 30);
+}
+
+body {
+  align-items: center;
+  margin-top: 10vh;
+}
+
+.slider {
+  width: 80vw;
+  max-width: 1200px;
+  overflow: hidden;
+  display: grid;
+  justify-items: end;
+  grid-template-areas: "image image"
+                       "caption buttons";
+  margin-left: auto;
+  margin-right: auto;
+  row-gap: 1em;
+}
+
+.slider .image {
+  grid-area: image;
+  max-height: 400px;
+  height: 50vw;
+  overflow: hidden;
+  pointer-events: none;
+  width: 100%  ;
+}
+
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1%;
+}
+
+.slider input {
+ grid-area: buttons;
+ align-self: end;
+ z-index: 1;
+
+}
+
+.slider label {
+  grid-area: buttons;
+  align-self: end;
+  z-index: 1;
+  
+ }
+
+.slider span {
+  grid-area: caption;
+}
+
+.slider span {
+  width: 100%;
+}
+
+label {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.inner-label {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgb(176 178 188);
+  /* transition: 0.5s ease-in;
+  transition-property: background-color; */
+}
+
+label:hover .inner-label{
+  border: 1px solid rgb(176 178 188);
+  background-color: rgb(91, 86, 110);
+}
+
+input:checked+* .inner-label {
+  background-color: rgb(176 178 188);
+}
+
+
+#label-1 {
+  transform: translateX(-300%);
+}
+
+#label-2 {
+  transform: translateX(-200%);
+}
+
+#label-3 {
+  transform: translateX(-100%);
+}
+
+#label-4 {
+  transform: translateX(0%);
+}
+
+input {
+  display: none;
+}
+
+.radio_option+*+.image+span,
+.radio_option+*+.image {
+  transform: translateX(100%);
+  transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  transition-property: transform, opacity;
+  opacity: 0;
+}
+
+.radio_option:checked+*+.image+span,
+.radio_option:checked+*+.image {
+  transform: translate(0) !important;
+  opacity: 1 !important;
+}
+
+.radio_option {
+  cursor: pointer;
+}
+
+
+.description {
+  font-size: 1rem;
+  font-family: Montserrat;
+  color: rgb(176 178 188);
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .slider {
+    grid-template-areas: "image"
+                         "buttons"
+                         "caption";
+    justify-items: center;
+  }
+
+  #label-1 {
+    transform: translateX(-50%);
+  }
+  
+  #label-2 {
+    transform: translateX(0%);
+  }
+  
+  #label-3 {
+    transform: translateX(50%);
+  }
+  
+  #label-4 {
+    transform: translateX(100%);
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .description {
+    font-size: 0.8rem!important;
+  }
+}
