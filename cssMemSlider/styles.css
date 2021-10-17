@@ -137,7 +137,7 @@ input {
   }
 
   #label-1 {
-    transform: translateX(-50%);
+    transform: translateX(-60%);
   }
   
   #label-2 {
@@ -145,11 +145,16 @@ input {
   }
   
   #label-3 {
-    transform: translateX(50%);
+    transform: translateX(60%);
   }
   
   #label-4 {
-    transform: translateX(100%);
+    transform: translateX(120%);
+  }
+
+  .inner-label {
+    width: 8px;
+    height: 8px;
   }
 
   .description {
